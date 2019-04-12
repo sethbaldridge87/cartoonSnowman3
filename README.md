@@ -1,2 +1,3 @@
-# cartoonSnowman3
-HTML and CSS animation
+Animation created with pure CSS.
+
+Check it out here: 

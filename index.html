@@ -1,0 +1,281 @@
+<div id="snowman">
+	<div id="hat">
+		<div id="hatTop"></div>
+		<div id="hatBody"></div>
+		<div id="hatBrim"></div>
+	</div>
+	<div id="head">
+		<div id="leftEye" class="eyes"></div>
+		<div id="rightEye" class="eyes"></div>
+		<div id="nose"></div>
+	</div>
+	<div class="arm" id="right_arm">
+		<div class="upper_arm" id="upper_right"></div>
+		<div class="forearm" id="forearm_right"></div>
+	</div>
+	<div class="arm" id="left_arm">
+		<div class="upper_arm" id="upper_left"></div>
+		<div class="forearm" id="forearm_left"></div>
+	</div>
+	<div id="torso">
+		<div class="button"></div>
+		<div class="button"></div>
+		<div class="button"></div>
+	</div>
+	<div id="base"></div>
+</div>
+<style>
+	#snowman {
+		position: relative;
+		left: 100px;
+	}
+	#hat {
+		position: absolute;
+		z-index: 3;
+		animation: hatDrop 10s infinite;
+	}
+	@keyframes hatDrop {
+		0% {top: 0;}
+		10% {top: 0;}
+		20% {top: 370px;}
+		30% {top: 370px;}
+		55% {top: 0;}
+		100% {top: 0;}
+	}
+	#hatTop {
+		position: absolute;
+		background-color:#444;
+		width: 100px;
+		height: 20px;
+		border-radius: 50%;
+		left: 52px;
+		z-index: 4;
+		top: 5px;
+	}
+	#hatBody {
+		position: absolute;
+		height: 100px;
+		width: 100px;
+		background-color: #000;
+		z-index: 3;
+		left: 52px;
+		top: 15px;
+	}
+	#hatBrim {
+		position: absolute;
+		background-color: #000;
+		z-index: 3;
+		height: 20px;
+		width: 130px;
+		left: 35px;
+    	top: 110px;
+		border-radius: 50%;
+	}
+	#head {
+		top: 95px;
+		background-color: #fff;
+		left: 50px;
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		border: 2px solid black;
+		border-radius: 50%;
+		box-shadow: inset -15px 0 4px 5px #eee;
+		z-index: 2;
+		animation: slim1 10s infinite;
+	}
+	@keyframes slim1 {
+		0% {width: 100px;left:50;opacity: 1;}
+		10% {width: 75px;left:60px;opacity: 1;top: 95px;}
+		12% {opacity:1;}
+		12.01% {opacity: 0;}
+		19% {width: 75px;left:60px;}
+		30% {}
+		45% {top: 95px;}
+		50% {top:0; opacity:0;}
+		60% {top:0; opacity:0;width: 75px;left:60px;}
+		60% {opacity:0;}
+		75% {top:95px; opacity: 1; width: 100px; left: 50px;}
+		85% {}
+		90% {width: 100px;left:50;opacity: 1;top: 95px;}
+		100% {width: 100px;left:50;opacity: 1;top: 95px;}
+	}
+	.eyes {
+		position: absolute;
+		height: 20px;
+		width: 10px;
+		background-color: #000;
+		border-radius: 50%;
+		z-index: 4;
+		top: 35px;
+	}
+	#leftEye {
+		left: 20px;
+		animation: eyes1 10s infinite;
+	}
+	@keyframes eyes1 {
+		0% {left:20px;}
+		10% {left:20px;}
+		100% {left:20px;}
+	}
+	#rightEye {
+		left: 70px;
+		animation: eyes2 10s infinite;
+	}
+	@keyframes eyes2 {
+		0% {left:70px;}
+		10% {left:45px;}
+		50% {left:70px;}
+		100% {left:70px;}
+	}
+	#nose {
+		top: 70px;
+		left: 45px;
+		transform-origin: 0% 0%;
+		transform: rotate(15deg);
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 5px solid transparent;
+		border-left: 50px solid orange;
+		border-bottom: 5px solid transparent;
+		animation: nose 10s infinite;
+	}
+	@keyframes nose {
+		0% {transform: rotate(15deg);}
+		10% {transform: rotate(90deg);}
+		50% {transform: rotate(15deg);}
+		100% {transform: rotate(15deg);}
+	}
+	.arm {
+		position: absolute;
+	}
+	#right_arm {
+		top: 200px;
+		left: 120px;
+		transform: rotate(-45deg);
+		animation: arm1 10s infinite;
+	}
+	@keyframes arm1 {
+		0% {transform: rotate(-45deg);opacity:1;}
+		5% {transform: rotate(0deg);opacity:1;}
+		5.5% {opacity: 0;}
+		10% {transform: rotate(0deg);}
+		65% {opacity: 0;}
+		70% {opacity: 1;transform: rotate(0deg);}
+		80% {transform: rotate(-45deg);}
+		100% {transform: rotate(-45deg);opacity:1;}
+	}
+	#left_arm {
+		top: 190px;
+		left: 72px;
+		transform: rotate(45deg);
+		animation: arm2 10s infinite;
+	}
+	@keyframes arm2 {
+		0% {transform: rotate(45deg);opacity:1;}
+		5% {transform: rotate(0deg);opacity:1;}
+		5.5% {opacity: 0;}
+		10% {transform: rotate(0deg);}
+		65% {opacity: 0;}
+		70% {opacity: 1;transform: rotate(0deg);}
+		80% {transform: rotate(45deg);}
+		100% {transform: rotate(45deg);opacity:1;}
+	}
+	.upper_arm {
+		position: absolute;
+		height: 150px;
+		width: 15px;
+		background-color: brown;
+	}
+	.forearm {
+		position: absolute;
+		height: 100px;
+		width: 15px;
+		background-color: brown;
+	}
+	#forearm_left {
+		transform: rotate(-45deg);
+		left: 35px;
+		top: 130px;
+	}
+	#forearm_right {
+		transform: rotate(45deg);
+		left: -35px;
+		top: 130px;
+	}
+	#torso {
+		background-color: #fff;
+		top: 175px;
+		left: 25px;
+		position: absolute;
+		width: 150px;
+		height: 150px;
+		border: 2px solid black;
+		border-radius: 50%;
+		box-shadow: inset -15px 0 4px 5px #eee;
+		z-index: 1;
+		animation: slim2 10s infinite;
+	}
+	@keyframes slim2 {
+		0% {width: 150px; left:25px; opacity:1;}
+		10% {width: 75px; left:60px; opacity:1; top: 175px;}
+		13% {opacity:1;}
+		13.01% {opacity: 0;}
+		19% {width: 75px; left:60px;}
+		30% {}
+		45% {top: 175px;}
+		50% {top:0; opacity:0; width: 75px; left:60px;}
+		65% {top:175px; opacity: 1; width: 150px; left: 25px;}
+		85% {}
+		90% {width: 150px;left:25px;opacity: 1;top: 175px;}
+		100% {width: 150px;left:25px;opacity: 1;top: 175px;}
+	}
+	.button {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background-color: #000;
+		position: absolute;
+		left: 62.5px;
+		animation: buttons 10s infinite;
+	}
+	@keyframes buttons {
+		0% {left: 62.5px;}
+		10% {left:27.5px;}
+		50% {left:62.5px;}
+		100% {left: 62.5px;}
+	}
+	.button:first-of-type {
+		top: 30px;
+	}
+	.button:nth-last-of-type(2) {
+		top: 70px;
+	}
+	.button:last-of-type {
+		top: 110px;
+	}
+	#base {
+		background-color: #fff;
+		top: 300px;
+		position: absolute;
+		width: 200px;
+		height: 200px;
+		border: 2px solid black;
+		border-radius: 50%;
+		box-shadow: inset -15px 0 4px 5px #eee;
+		animation: slim3 10s infinite;
+	}
+	@keyframes slim3 {
+		0% {width: 200px;left:0;}
+		10% {width: 75px;left:60px;opacity:1;top: 300px;}
+		15% {opacity: 1;}
+		15.01% {opacity: 0;}
+		30% {width: 75px;left:60px;top: 300px;}
+		45% {top: 0;opacity: 0; width: 75px;left:60px;}
+		55% {top: 300px; width: 200px;left:0;}
+		60% {opacity: 1;}
+		90% {width: 200px;left:0;opacity:1;top: 300px;}
+		100% {width: 200px;left:0;opacity:1;top: 300px;}
+	}
+</style>
